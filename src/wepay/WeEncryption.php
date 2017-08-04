@@ -6,11 +6,11 @@
  * Time: 1:11
  */
 
-namespace lmxdawn\app_pay\wepay;
+namespace lmxdawn\appPay\wepay;
 
 
-use lmxdawn\app_pay\Config;
-use lmxdawn\app_pay\Encryption;
+use lmxdawn\appPay\Config;
+use lmxdawn\appPay\Encryption;
 
 class WeEncryption extends Encryption
 {

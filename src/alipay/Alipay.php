@@ -6,10 +6,10 @@
  * Time: 13:15
  */
 
-namespace lmxdawn\app_pay\alipay;
+namespace lmxdawn\appPay\alipay;
 
-use lmxdawn\app_pay\Config;
-use lmxdawn\app_pay\Pay;
+use lmxdawn\appPay\Config;
+use lmxdawn\appPay\Pay;
 
 class Alipay extends Pay
 {

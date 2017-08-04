@@ -6,7 +6,7 @@
  * Time: 1:17
  */
 
-namespace lmxdawn\app_pay\wepay;
+namespace lmxdawn\appPay\wepay;
 
 
 class XmlTransfer

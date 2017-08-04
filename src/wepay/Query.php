@@ -6,11 +6,11 @@
  * Time: 1:29
  */
 
-namespace lmxdawn\app_pay\wepay;
+namespace lmxdawn\appPay\wepay;
 
 
-use lmxdawn\app_pay\Config;
-use lmxdawn\app_pay\Curl;
+use lmxdawn\appPay\Config;
+use lmxdawn\appPay\Curl;
 
 class Query
 {

@@ -6,12 +6,12 @@
  * Time: 0:48
  */
 
-namespace lmxdawn\app_pay\wepay;
+namespace lmxdawn\appPay\wepay;
 
 
-use lmxdawn\app_pay\Config;
-use lmxdawn\app_pay\Curl;
-use lmxdawn\app_pay\Pay;
+use lmxdawn\appPay\Config;
+use lmxdawn\appPay\Curl;
+use lmxdawn\appPay\Pay;
 
 class WePay extends Pay
 {
