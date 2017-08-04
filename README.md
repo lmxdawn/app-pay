@@ -12,7 +12,7 @@ APP 支付
  * 支付宝
  
     ```php
-    // 测试数据开始
+    // 测试数据开始1
     $subject = "iPhone";
     $total_amount = "5688";
     $out_trade_no = "201612172344562";      // 订单号，不超过64位
