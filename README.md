@@ -5,7 +5,7 @@ APP 支付
 
 ## 安装
 
->composer require lmxdawn/app-pay
+>composer require lmxdawn/app_pay
 
 ## 示例
 
