@@ -1,4 +1,4 @@
-#  app-pay
+#  app_pay
 
 APP 支付
 
