@@ -1,0 +1,26 @@
+{
+    "name": "lmxdawn/appPay",
+    "type": "library",
+    "description": "appPay package for thinkphp5.0",
+    "keywords": ["appPay"],
+    "homepage": "https://github.com/lmxdawn/appPay",
+    "license": "Apache-2.0",
+    "minimum-stability": "stable",
+    "authors": [
+        {
+            "name": "Lan Ming Xiang",
+            "email": "lmxdawn@gmail.com"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/lmxdawn/appPay/issues"
+    },
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "lmxdawn\\rsa\\": "src/"
+        }
+    }
+}
