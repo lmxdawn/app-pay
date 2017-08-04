@@ -1,18 +1,18 @@
-#  appPay
+#  app-pay
 
 APP 支付
 
 
 ## 安装
 
->composer require lmxdawn/appPay
+>composer require lmxdawn/app-pay
 
 ## 示例
 
  * 支付宝
  
     ```php
-    // 测试数据开始1
+    // 测试数据开始
     $subject = "iPhone";
     $total_amount = "5688";
     $out_trade_no = "201612172344562";      // 订单号，不超过64位
@@ -34,7 +34,7 @@ APP 支付
         "biz_content"           =>  $bizContentArr
     );
     
-    $alipay = new lmxdawn\appPay\alipay\Alipay();
+    $alipay = new lmxdawn\app_pay\alipay\Alipay();
     $sign = $alipay->request($data);
     echo $sign;
     ```
@@ -56,11 +56,11 @@ APP 支付
     );
     
     // 实例化签名类
-    $pay = new lmxdawn\appPay\wepay\WePay();
+    $pay = new lmxdawn\app_pay\wepay\WePay();
     $response = $pay->request($data);
     
     // 解析XML数据
-    $xml = new lmxdawn\appPay\wepay\XmlTransfer();
+    $xml = new lmxdawn\app_pay\wepay\XmlTransfer();
     $response = $xml->xml2Array($response);
     
     if (!empty($response))
@@ -84,7 +84,7 @@ APP 支付
     	            "timestamp"     =>  time(),
     	            "package"       =>  "Sign=WXPay"
     	        );
-    	        $encpt = new lmxdawn\appPay\wepay\WeEncryption();
+    	        $encpt = new lmxdawn\app_pay\wepay\WeEncryption();
     	        $sign = $encpt->signature($resign);
     	        $resign["sign"] = $sign;
     	        echo json_encode($resign);

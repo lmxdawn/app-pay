@@ -6,7 +6,7 @@
  * Time: 0:33
  */
 
-namespace lmxdawn\appPay;
+namespace lmxdawn\app_pay;
 
 
 class PayFactory

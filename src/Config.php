@@ -6,7 +6,7 @@
  * Time: 0:25
  */
 
-namespace lmxdawn\appPay;
+namespace lmxdawn\app_pay;
 
 
 class Config

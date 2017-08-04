@@ -29,6 +29,6 @@ $data = array(
     "biz_content"           =>  $bizContentArr
 );
 
-$alipay = new lmxdawn\appPay\alipay\Alipay();
+$alipay = new lmxdawn\app_pay\alipay\Alipay();
 $sign = $alipay->request($data);
 echo $sign;

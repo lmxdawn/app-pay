@@ -6,7 +6,7 @@
  * Time: 0:29
  */
 
-namespace lmxdawn\appPay;
+namespace lmxdawn\app_pay;
 
 
 class Curl

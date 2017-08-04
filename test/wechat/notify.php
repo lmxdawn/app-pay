@@ -14,7 +14,7 @@ if (empty($postXml))
     exit;
 }
 
-$xmlTransfer = new lmxdawn\appPay\wepay\XmlTransfer();
+$xmlTransfer = new lmxdawn\app_pay\wepay\XmlTransfer();
 $response = $xmlTransfer->xml2Array($postXml);
 
 if (empty($response))
@@ -31,7 +31,7 @@ else
             echo "FAIL";
             exit;
         }
-        $encpt = new lmxdawn\appPay\wepay\WeEncryption();
+        $encpt = new lmxdawn\app_pay\wepay\WeEncryption();
         $data = array(
             "appid"				=>	$response["appid"],
             "mch_id"			=>	$response["mch_id"],
