@@ -21,7 +21,7 @@ $signParams = array(
     "refund_fee"    =>  $refund_fee
 );
 // 发起退款请求
-$refund = new lmxdawn\app_pay\wepay\Refund();
+$refund = new lmxdawn\appPay\wepay\Refund();
 $response = $refund->request($signParams);
 
 // 解析返回数据
