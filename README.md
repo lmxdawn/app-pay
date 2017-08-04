@@ -1,11 +1,11 @@
-#  app_pay
+#  app-pay
 
 APP 支付
 
 
 ## 安装
 
->composer require lmxdawn/app_pay
+>composer require lmxdawn/app-pay
 
 ## 示例
 
