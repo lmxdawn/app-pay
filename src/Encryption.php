@@ -6,7 +6,7 @@
  * Time: 0:45
  */
 
-namespace lmxdawn\appPay;
+namespace lmxdawn\app_pay;
 
 
 abstract class Encryption

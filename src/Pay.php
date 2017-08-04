@@ -6,7 +6,7 @@
  * Time: 13:35
  */
 
-namespace lmxdawn\appPay;
+namespace lmxdawn\app_pay;
 
 
 abstract class Pay

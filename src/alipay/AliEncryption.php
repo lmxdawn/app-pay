@@ -6,10 +6,10 @@
  * Time: 13:27
  */
 
-namespace lmxdawn\appPay\alipay;
+namespace lmxdawn\app_pay\alipay;
 
-use lmxdawn\appPay\Config;
-use lmxdawn\appPay\Encryption;
+use lmxdawn\app_pay\Config;
+use lmxdawn\app_pay\Encryption;
 
 class AliEncryption extends Encryption
 {

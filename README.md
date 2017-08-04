@@ -34,7 +34,7 @@ APP 支付
         "biz_content"           =>  $bizContentArr
     );
     
-    $alipay = new lmxdawn\appPay\alipay\Alipay();
+    $alipay = new lmxdawn\app_pay\alipay\Alipay();
     $sign = $alipay->request($data);
     echo $sign;
     ```
@@ -56,11 +56,11 @@ APP 支付
     );
     
     // 实例化签名类
-    $pay = new lmxdawn\appPay\wepay\WePay();
+    $pay = new lmxdawn\app_pay\wepay\WePay();
     $response = $pay->request($data);
     
     // 解析XML数据
-    $xml = new lmxdawn\appPay\wepay\XmlTransfer();
+    $xml = new lmxdawn\app_pay\wepay\XmlTransfer();
     $response = $xml->xml2Array($response);
     
     if (!empty($response))
@@ -84,7 +84,7 @@ APP 支付
     	            "timestamp"     =>  time(),
     	            "package"       =>  "Sign=WXPay"
     	        );
-    	        $encpt = new lmxdawn\appPay\wepay\WeEncryption();
+    	        $encpt = new lmxdawn\app_pay\wepay\WeEncryption();
     	        $sign = $encpt->signature($resign);
     	        $resign["sign"] = $sign;
     	        echo json_encode($resign);
