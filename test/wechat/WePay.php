@@ -20,6 +20,7 @@ $data = array(
     "spbill_create_ip"  =>  $spbill_create_ip
 );
 
+
 // 实例化签名类
 $pay = new lmxdawn\appPay\wepay\WePay();
 $response = $pay->request($data);
