@@ -28,11 +28,11 @@ $data = array(
 );
 
 // 实例化支付类
-$alipay = new lmxdawn\appPay\alipay\Alipay();
+$alipay = new \lmxdawn\appPay\alipay\Alipay();
 $sign = $alipay->request($data);
 
 // 申请退款
-$curl = new lmxdawn\appPay\Curl();
+$curl = new \lmxdawn\appPay\Curl();
 $curl->setUrl('https://openapi.alipay.com/gateway.do');
 $curl->setIsHttps(true);
 $curl->setRequestMethod("GET");

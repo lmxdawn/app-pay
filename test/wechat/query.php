@@ -10,11 +10,11 @@
 $out_trade_no = "201609241165665169";
 // 测试数据结束
 
-$query = new lmxdawn\appPay\wepay\Query();
+$query = new \lmxdawn\appPay\wepay\Query();
 $response = $query->request($out_trade_no);
 
 // 解析数据
-$xmlTransfer = new lmxdawn\appPay\wepay\XmlTransfer();
+$xmlTransfer = new \lmxdawn\appPay\wepay\XmlTransfer();
 $response = $xmlTransfer->xml2Array($response);
 
 // 业务处理

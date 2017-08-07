@@ -22,11 +22,11 @@ $data = array(
 
 
 // 实例化签名类
-$pay = new lmxdawn\appPay\wepay\WePay();
+$pay = new \lmxdawn\appPay\wepay\WePay();
 $response = $pay->request($data);
 
 // 解析XML数据
-$xml = new lmxdawn\appPay\wepay\XmlTransfer();
+$xml = new \lmxdawn\appPay\wepay\XmlTransfer();
 $response = $xml->xml2Array($response);
 
 if (!empty($response))
@@ -50,7 +50,7 @@ if (!empty($response))
 	            "timestamp"     =>  time(),
 	            "package"       =>  "Sign=WXPay"
 	        );
-	        $encpt = new lmxdawn\appPay\wepay\WeEncryption();
+	        $encpt = new \lmxdawn\appPay\wepay\WeEncryption();
 	        $sign = $encpt->signature($resign);
 	        $resign["sign"] = $sign;
 	        echo json_encode($resign);
