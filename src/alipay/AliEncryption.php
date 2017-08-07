@@ -26,7 +26,12 @@ class AliEncryption extends Encryption
         $res = openssl_get_privatekey($priKey);
         ($res) or die("您使用的私钥格式错误，请检查RSA私钥配置");
         // 参数签名
-        openssl_sign($data, $sign, $res);
+        $signType = Config::getConf("ALI_SIGN_TYPE");
+        if ("RSA2" == $signType) {
+            openssl_sign($data, $sign, $res, OPENSSL_ALGO_SHA256);
+        } else {
+            openssl_sign($data, $sign, $res);
+        }
         openssl_free_key($res);
         $sign = base64_encode($sign);
         return $sign;
@@ -46,7 +51,12 @@ class AliEncryption extends Encryption
         $res = openssl_get_publickey($pubKey);
         ($res) or die('支付宝RSA公钥错误。请检查公钥文件格式是否正确');
         //调用openssl内置方法验签，返回bool值
-        $result = (bool)openssl_verify($beVerify, base64_decode($sign), $res, OPENSSL_ALGO_SHA1);
+        $signType = Config::getConf("ALI_SIGN_TYPE");
+        if ("RSA2" == $signType) {
+            $result = (bool)openssl_verify($beVerify, base64_decode($sign), $res, OPENSSL_ALGO_SHA256);
+        } else {
+            $result = (bool)openssl_verify($beVerify, base64_decode($sign), $res);
+        }
         openssl_free_key($res);	//释放资源
         return $result;
     }

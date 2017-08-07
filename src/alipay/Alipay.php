@@ -46,7 +46,7 @@ class Alipay extends Pay
         $params = array(
             "app_id"        =>  Config::getConf("ALI_APPID"),
             "method"        =>  Config::getConf("ALI_PID"),
-            "sign_type"     =>  "RSA",
+            "sign_type"     =>  Config::getConf("ALI_SIGN_TYPE"),
             "version"       =>  "1.0",
             "notify_url"    =>  Config::getConf("ALI_NOTIFY_URL"),
         );

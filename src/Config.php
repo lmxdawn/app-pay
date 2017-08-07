@@ -17,21 +17,21 @@ class Config
     private static $config = array(
 
         // 微信支付参数配置
-        "WECHAT_APPID"              =>      "",
-        "WECHAT_MCHID"              =>      "",
-        "WECHAT_KEY"                =>      "",
-        "WECHAT_TRADE_TYPE"         =>      "APP",
-        "WECHAT_NOTIFY_URL"         =>      "",
-        "WECHAT_SSLCERT_PATH"       =>      "/certs/wechat/...",
-        "WECHAT_SSLKEY_PATH"        =>      "/certs/wechat/...",
+        "WECHAT_APPID"              =>      "", // 绑定支付的APPID
+        "WECHAT_MCHID"              =>      "", // 商户号
+        "WECHAT_KEY"                =>      "",// 商户支付密钥
+        "WECHAT_TRADE_TYPE"         =>      "APP", // 交易类型
+        "WECHAT_NOTIFY_URL"         =>      "", // 交易回调地址
+        "WECHAT_SSLCERT_PATH"       =>      "/certs/wechat/...", // 证书
+        "WECHAT_SSLKEY_PATH"        =>      "/certs/wechat/...", //
 
         // 支付宝支付参数配置
-        "ALI_APPID"                 =>      "2016081801766911",
-        "ALI_PID"                   =>      "2088022393766628",
-        "ALI_PUBLIC_KEY"            =>      "/certs/ali/",
-        "ALI_PRIVATE_KEY"           =>      "/certs/ali/",
-        "ALI_ALIPAY_PUBLIC_KEY"     =>      "/certs/ali/",
-        "ALI_NOTIFY_URL"            =>      "",
+        "ALI_APPID"                 =>      "",
+        "ALI_PID"                   =>      "",
+        "ALI_SIGN_TYPE"            =>      "RSA2",// 签名方式
+        "ALI_PRIVATE_KEY"           =>      "/certs/ali/", // 私钥
+        "ALI_ALIPAY_PUBLIC_KEY"     =>      "/certs/ali/", // 公钥
+        "ALI_NOTIFY_URL"            =>      "", // 交易回调
     );
 
     /**
