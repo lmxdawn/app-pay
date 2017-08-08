@@ -23,6 +23,9 @@ class AliEncryption extends Encryption
         //读取私钥文件
         $rsaPriKeyFile = Config::getConf("ALI_PRIVATE_KEY");
         $priKey = file_get_contents($rsaPriKeyFile) or die("密钥文件读取失败！");
+        $priKey = "-----BEGIN RSA PRIVATE KEY-----\n" .
+            wordwrap($priKey, 64, "\n", true) .
+            "\n-----END RSA PRIVATE KEY-----";
         $res = openssl_get_privatekey($priKey);
         ($res) or die("您使用的私钥格式错误，请检查RSA私钥配置");
         // 参数签名
@@ -48,6 +51,9 @@ class AliEncryption extends Encryption
         $rsaPubKeyFile = Config::getConf("ALI_ALIPAY_PUBLIC_KEY");
         $pubKey = file_get_contents($rsaPubKeyFile) or die("读取公钥文件失败！");
         //转换为openssl格式密钥
+        $pubKey = "-----BEGIN PUBLIC KEY-----\n" .
+            wordwrap($pubKey, 64, "\n", true) .
+            "\n-----END PUBLIC KEY-----";
         $res = openssl_get_publickey($pubKey);
         ($res) or die('支付宝RSA公钥错误。请检查公钥文件格式是否正确');
         //调用openssl内置方法验签，返回bool值
