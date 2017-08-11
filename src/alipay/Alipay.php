@@ -23,7 +23,7 @@ class Alipay extends Pay
         // 序列化签名数据
         $data = $this->serializeParams($data);
         // 请求参数按照key=value&key=value方式拼接的未签名原始字符串
-        $stringToBeSigned = implode("&", $data);
+        $stringToBeSigned = $this->getSignContent($data);
         // 获取支付参数签名
         $encpt = new AliEncryption();
         $sign = $encpt->signature($stringToBeSigned);
@@ -60,12 +60,30 @@ class Alipay extends Pay
                 }
                 // 转换成目标字符集
                 $v = mb_convert_encoding($v, 'UTF-8');
-                array_push($filterArr, $k."=".$v);
+                $filterArr[$k] = $v;
+                //array_push($filterArr, $k."=".$v);
             }
         }
         unset ($k, $v);
         // 将参数使用&连接符连接为字符串
         return $filterArr;
+    }
+
+    protected function getSignContent($params) {
+        ksort($params);
+        $stringToBeSigned = "";
+        $i = 0;
+        foreach ($params as $k => $v) {
+
+            if ($i == 0) {
+                $stringToBeSigned .= "$k" . "=" . "$v";
+            } else {
+                $stringToBeSigned .= "&" . "$k" . "=" . "$v";
+            }
+            $i++;
+        }
+        unset ($k, $v);
+        return $stringToBeSigned;
     }
 
     /**
@@ -96,7 +114,7 @@ class Alipay extends Pay
         unset($data["sign"]);
         unset($data["sign_type"]);
         // 处理通知参数
-        $data = $this->withUrlEncode($data);
+        $data = $this->getSignContent($data);
         $beSign = implode("&", $data);
         // 验证签名
         $encpt = new AliEncryption();
