@@ -114,8 +114,7 @@ class Alipay extends Pay
         unset($data["sign"]);
         unset($data["sign_type"]);
         // 处理通知参数
-        $data = $this->getSignContent($data);
-        $beSign = implode("&", $data);
+        $beSign = $this->getSignContent($data);
         // 验证签名
         $encpt = new AliEncryption();
         $result = $encpt->verify($beSign, $sign);
